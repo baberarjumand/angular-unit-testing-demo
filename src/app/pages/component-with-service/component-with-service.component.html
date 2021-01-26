@@ -1,0 +1,31 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12 text-center mt-5">
+      <button class="btn btn-primary" [routerLink]="['/']">Back to Home</button>
+    </div>
+    <div class="col-12 text-center mt-5">
+      <h1 class="page-heading">Component With a Service</h1>
+    </div>
+    <div class="col-12 text-center mt-5">
+      <button class="btn btn-primary add-person-btn" (click)="this.addPerson()">
+        Add Person
+      </button>
+    </div>
+    <div class="col-12 text-center mt-5">
+      <button
+        class="btn btn-primary delete-person-btn"
+        (click)="this.deletePerson()"
+      >
+        Delete Person
+      </button>
+    </div>
+    <ng-template [ngIf]="this.localPersonsArr.length > 0">
+      <div class="col-4 px-4" *ngFor="let person of this.localPersonsArr">
+        <div class="card mt-5 p-5">
+          <p>ID: {{ person.id }}</p>
+          <p>Name: {{ person.name }}</p>
+        </div>
+      </div>
+    </ng-template>
+  </div>
+</div>
